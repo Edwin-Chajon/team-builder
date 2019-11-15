@@ -15,41 +15,38 @@ const Form = props => {
     setEmail('');
     setRole('');
   }
-
-  //
-  return (
+  
+  //the components that make up the form
+  return(
+    //onsubmit executes javascript once a form is submitted
     <form onSubmit = {(event) => {
-      props.addMember(event, name, email, role)
+      props.addMember (event, name, email, role) 
       newForm()}}>
       <label htmlFor = "name">Name</label>
-      <input
+      <input 
         id = "name"
         name = "name"
         type = "text"
-        value = {name}
-        required
-        onChange = {(event) => setName(event.target.value)} />
+        required onChange = {(event) => setName(event.target.value)}/>
+
       <label htmlFor = "email">Email</label>
-      <input
+      <input 
         id = "email"
         name = "email"
         type = "email"
         value = {email}
-        required
-        onChange = {(event) => setEmail(event.target.value)} />
+        required onChange = {(event) => setEmail(event.target.value)}/>
+
       <label htmlFor = "role">Role</label>
-      <input
+      <input 
         id = "role"
         name = "role"
         type = "text"
         value = {role}
-        required
-        onChange = {(event) => setRole(event.target.value)} />
-      <button type = "submit">Submit</button>
-    </form>
+        required onChange = {(event) => setRole(event.target.value)}/>
+      <button type = "submit">submit</button>
+      </form>  
   );
-
 }
-export default Form;
 
-
+export default Form
